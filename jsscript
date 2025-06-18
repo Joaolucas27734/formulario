@@ -1,0 +1,34 @@
+function mostrarCampoAjuda() {
+  const ajuda = document.getElementById('ajuda').value;
+  const campo = document.getElementById('campo-ajuda');
+  if (ajuda === 'Sim') {
+    campo.style.display = 'block';
+  } else {
+    campo.style.display = 'none';
+  }
+}
+
+// Envio dos dados para Google Sheets
+const form = document.getElementById('survey-form');
+
+if (form) {
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    const data = new FormData(form);
+    const formData = {};
+    data.forEach((value, key) => (formData[key] = value));
+
+    fetch("URL_DO_SEU_SCRIPT_WEB_APP", {
+      method: "POST",
+      body: JSON.stringify(formData),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+    .then(() => {
+      window.location.href = "agradecimento.html";
+    })
+    .catch(err => alert("Erro ao enviar. Tente novamente."));
+  });
+}

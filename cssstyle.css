@@ -1,0 +1,116 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  margin: 0;
+  padding: 30px 15px;
+  color: #333;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #02bfe4;
+  text-align: center;
+}
+
+main h2 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #333;
+}
+
+form#survey-form label {
+  display: block; /* Faz cada label ocupar a linha inteira */
+  margin-bottom: 18px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Para asterisco de obrigatório ficar vermelho e pequeno */
+form#survey-form label::after {
+  content: "*";
+  color: red;
+  margin-left: 5px;
+  font-weight: bold;
+  font-size: 18px;
+  vertical-align: middle;
+}
+
+form#survey-form input[type="text"],
+form#survey-form input[type="email"],
+form#survey-form input[type="number"],
+form#survey-form select,
+form#survey-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+  font-family: inherit;
+  resize: vertical; /* permite redimensionar verticalmente o textarea */
+}
+
+/* Placeholder estilo leve */
+form#survey-form input::placeholder,
+form#survey-form textarea::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* Foco no input */
+form#survey-form input:focus,
+form#survey-form select:focus,
+form#survey-form textarea:focus {
+  border-color: #02bfe4;
+  outline: none;
+  box-shadow: 0 0 5px #02bfe4;
+}
+
+/* Botão estilo Google */
+form#survey-form button.btn {
+  background-color: #02bfe4;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+  margin-top: 15px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+form#survey-form button.btn:hover {
+  background-color: #0286b9;
+}
+
+/* Campo ajuda aparece com espaço abaixo */
+#campo-ajuda {
+  margin-bottom: 15px;
+}
+
+/* Para deixar as estrelas das opções mais próximas */
+form#survey-form select option {
+  padding: 4px 0;
+}
